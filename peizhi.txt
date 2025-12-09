@@ -1,0 +1,68 @@
+C:\Users\小白的船不会翻>node --version
+v18.17.0
+
+C:\Users\小白的船不会翻>npm --version
+9.6.7
+
+后端文件backed，创建package.json文件管理依赖
+D:\全栈开发练习\web_kf\contact_01\backed>npm init -y
+Wrote to D:\全栈开发练习\web_kf\contact_01\backed\package.json:
+
+{
+  "name": "backed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+安装express快速搭建后端
+D:\全栈开发练习\web_kf\contact_01\backed>npm install express
+
+added 65 packages in 3s
+
+20 packages are looking for funding
+  run `npm fund` for details
+
+在backed里面创建一个文件server.js,写一个简单接口
+
+开始运行(在后端文件所在目录下cmd)
+D:\全栈开发练习\web_kf\contact_01\backed\back>node server.js
+🚀 后端启动成功！请访问：http://localhost:3000/hello
+
+测试接口
+在网站中访问http://localhost:3000/hello
+正常返回数据
+
+前端部署在5500，后端在3000，要解决跨域问题
+后端设置跨域，就任何地址都能访问
+先下载npm install cors
+再配置
+const cors = require('cors');
+app.use(cors());
+
+前后端联调好后就是部署问题了，把服务器部署在公网上
+
+services选择
+Service 类型	用途	适合你吗？	说明
+🟢 Web Service	部署持续运行的 Web 服务器（如 Node.js、Python、Go 后端）	
+✅ 选这个！	你的 Express 后端就属于这种，需要一直在线，接收请求
+
+🟡 Static Site	部署纯静态网站（HTML/CSS/JS，无后端逻辑）		
+比如你只想放一个  index.html  页面，不需要 API，才用它
+🔵 Private Service	部署只能在内部网络访问的服务（不暴露公网）		
+比如内部工具、数据库代理，外部无法直接访问
+🟠 Background Worker	部署长时间运行的后台任务（无 HTTP 请求）		
+比如定时清理数据、发邮件队列，不需要对外提供接口
+🟣 Cron Job	部署定时执行的任务（比如每天凌晨跑一次）		
+比如每天备份数据库、生成报表
+🔴 Redis / PostgreSQL	部署数据库或缓存服务	（现阶段）	
+你以后可能需要，但现在先部署后端
+
+
