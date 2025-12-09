@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>我的第一个网页</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <h1>欢迎来到我的网页</h1>
+    <p>这是我做的第一个本地网页。</p >
+    <button onclick="sayHi()">点我打个招呼</button>
+    <p id="greet"></p >
+
+    <script>
+        function sayHi() {
+            document.getElementById('greet').innerText = '你好呀，欢迎访问！';
+        }
+    </script>
+</body>
+</html>
